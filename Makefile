@@ -6,7 +6,7 @@
 #    By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/02 16:25:35 by vrouxel           #+#    #+#              #
-#    Updated: 2026/09/20 21:30:05 by vrouxel          ###   ########.fr        #
+#    Updated: 2026/10/19 17:04:17 by vrouxel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ BUILD_DIR := build
 LIST_DIR := lib/lists
 LIST_LIB := lib/liblists.a
 LIBFT_DIR := lib/libft
+FTPRINTF_LIB := lib/ft_printf/libftprintf.a
+FTPRINTF_DIR := lib/ft_printf
 LIBFT_LIB := $(LIBFT_DIR)/libft.a
 
 SRC := src/main.c \
@@ -41,14 +43,17 @@ OBJ := $(SRC:%.c=$(BUILD_DIR)/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT_LIB) $(LIST_LIB)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_LIB) $(LIST_LIB) -o $(NAME)
+$(NAME): $(OBJ) $(LIBFT_LIB) $(LIST_LIB) $(FTPRINTF_LIB)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_LIB) $(LIST_LIB) $(FTPRINTF_LIB) -o $(NAME)
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR)
 
 $(LIST_LIB):
 	$(MAKE) -C $(LIST_DIR)
+
+$(FTPRINTF_LIB):
+	$(MAKE) -C $(FTPRINTF_DIR)
 
 $(BUILD_DIR)/%.o: %.c
 	mkdir -p $(@D)
@@ -58,11 +63,13 @@ clean:
 	rm -rf $(BUILD_DIR)
 	$(MAKE) -C $(LIBFT_DIR) clean
 	$(MAKE) -C $(LIST_DIR) clean
+	$(MAKE) -C $(FTPRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(MAKE) -C $(LIST_DIR) fclean
+	$(MAKE) -C $(FTPRINTF_DIR) fclean
 
 re: fclean all
 
