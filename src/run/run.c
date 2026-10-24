@@ -6,12 +6,12 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 00:00:00 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/09/20 20:26:02 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 14:22:00 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "run.h"
-#include <stdio.h>
+#include "libft.h"
 #include <stdlib.h>
 
 void	run_destroy(t_run *run)
@@ -43,21 +43,42 @@ const char	*run_strategy_complexity(t_strategy strategy)
 	return ("O(n log(n))");
 }
 
+static void	run_report_operations(const t_run *run)
+{
+	const char	*names[OP_COUNT] = {
+		"sa", "sb", "ss", "pa", "pb", "ra",
+		"rb", "rr", "rra", "rrb", "rrr"
+	};
+	int					i;
+
+	ft_putstr_fd("\n[bench] ", 2);
+	i = 0;
+	while (i < OP_COUNT)
+	{
+		if (i == OP_RA)
+			ft_putstr_fd("\n[bench] ", 2);
+		if (i > 0 && i != OP_RA)
+			ft_putstr_fd(" ", 2);
+		ft_putstr_fd(names[i], 2);
+		ft_putstr_fd(": ", 2);
+		ft_putnbr_fd(run->operations[i], 2);
+		i++;
+	}
+	ft_putstr_fd("\n", 2);
+}
+
 void	run_report(const t_run *run)
 {
 	if (!run || !run->bench)
 		return ;
-	fprintf(stderr, "[bench] disorder: %.2f%%\n", run->disorder * 100.0f);
-	fprintf(stderr, "[bench] strategy: %s / %s\n",
-		run_strategy_name(run->strategy),
-		run_strategy_complexity(run->effective_strategy));
-	fprintf(stderr, "[bench] total_ops: %u\n", run->total_operations);
-	fprintf(stderr, "[bench] sa: %u sb: %u ss: %u pa: %u pb: %u\n",
-		run->operations[OP_SA], run->operations[OP_SB],
-		run->operations[OP_SS], run->operations[OP_PA],
-		run->operations[OP_PB]);
-	fprintf(stderr, "[bench] ra: %u rb: %u rr: %u rra: %u rrb: %u rrr: %u\n",
-		run->operations[OP_RA], run->operations[OP_RB],
-		run->operations[OP_RR], run->operations[OP_RRA],
-		run->operations[OP_RRB], run->operations[OP_RRR]);
+	ft_putstr_fd("[bench] disorder: ", 2);
+	ft_putfloat_fd(run->disorder * 100.0f, 2);
+	ft_putstr_fd("%\n", 2);
+	ft_putstr_fd("[bench] strategy: ", 2);
+	ft_putstr_fd(run_strategy_name(run->strategy), 2);
+	ft_putstr_fd(" / ", 2);
+	ft_putstr_fd(run_strategy_complexity(run->effective_strategy), 2);
+	ft_putstr_fd("\n[bench] total_ops: ", 2);
+	ft_putnbr_fd(run->total_operations, 2);
+	run_report_operations(run);
 }
