@@ -6,7 +6,7 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 16:16:45 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/09/04 19:12:36 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 15:45:36 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "lists.h"
 
-int		*parse_args(int argc, char **argv, int *count_out);
 int		*parse_args_from(int argc, char **argv, int start, int *count_out);
 float	get_disorder(t_list *list);
 

@@ -6,7 +6,7 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 16:16:42 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/09/05 19:41:42 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 15:45:01 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,4 @@ int	*parse_args_from(int argc, char **argv, int start, int *count_out)
 		return (NULL);
 	}
 	return (values);
-}
-
-int	*parse_args(int argc, char **argv, int *count_out)
-{
-	return (parse_args_from(argc, argv, 1, count_out));
 }
