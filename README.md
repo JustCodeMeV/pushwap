@@ -81,25 +81,28 @@ complexity class, total operations, and the count of every Push_swap operation.
 
 ### Checking a result
 
-The repository includes `checker_linux` for Linux systems. Pipe the generated
+The project resources include `checker_linux` for Linux systems. Pipe the generated
 operations to it using the same input:
 
 ```sh
 ARG="4 67 3 87 23"
-./push_swap --complex $ARG | ./checker_linux $ARG
+./push_swap $ARG | ./checker_linux $ARG
 ```
 
 The checker prints `OK` for a correctly sorted stack and `KO` otherwise.
 
-The additional tester in [`Push-Swap-Tester/`](./Push-Swap-Tester/) can run
-error, sorting, operation-count, and large-input checks:
+Random sets can be tested the following way:
 
 ```sh
-./push_swap_test_linux.sh
+shuf -i 0-9999 -n 100 > args.txt ; ./push_swap $(cat args.txt) | wc -l
+```
+or
+
+```sh
+shuf -i 0-9999 -n 500 > args.txt ; ./push_swap $(cat args.txt) | wc -l
 ```
 
-For the tester's complete options and visualizer integration, see
-[`Push-Swap-Tester/README.md`](./Push-Swap-Tester/README.md).
+both test will output the numbers of operations that were performed
 
 ## Algorithms and technical choices
 
@@ -201,6 +204,9 @@ Push-Swap-Tester/        Optional tester and checker resources
   - background for the binary LSD strategy.
 * [Square root decomposition - CP-Algorithms](https://cp-algorithms.com/data_structures/sqrt_decomposition.html)
   - background for chunk sizes based on `sqrt(n)`.
+  - man
+  - man man
+  - man google
 
 ### AI usage
 
@@ -209,8 +215,10 @@ this README, and check that the documented commands, flags, strategies,
 thresholds, complexity claims, and benchmark behavior match the source code.
 The README is documentation of this repository; implementation decisions and
 code changes remain the responsibility of the project author.
+Any AI used was checked, double checked, triple checked by human.
 
 ## Author
 
 * `vrouxel` - implementation, algorithm selection, testing, and documentation.
-  `paukowal`- 
+  `paukowal`- algorithms implementation and selection.
+  `vrouxel` - implementation, testing, reviewing.
