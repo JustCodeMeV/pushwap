@@ -6,7 +6,7 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 14:18:24 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/10/24 14:18:28 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 17:28:58 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "instruction_set.h"
 # include "parsing.h"
+# include "ft_printf.h"
 
 typedef enum e_strategy
 {

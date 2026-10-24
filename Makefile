@@ -13,7 +13,7 @@
 NAME := push_swap
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
-CPPFLAGS := -Iinclude -Ilib/libft -Ilib/lists
+CPPFLAGS := -Iinclude -Ilib/libft -Ilib/lists -Ilib/ft_printf
 BUILD_DIR := build
 LIST_DIR := lib/lists
 LIST_LIB := lib/lists/liblists.a

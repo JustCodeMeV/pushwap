@@ -6,18 +6,18 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 00:00:00 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/09/20 20:27:13 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 17:30:40 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "run.h"
-#include <stdio.h>
+#include "libft.h"
 
 void	run_mark(t_run *run, t_operation operation, const char *name)
 {
 	run->operations[operation]++;
 	run->total_operations++;
-	printf("%s\n", name);
+	ft_printf("%s\n", name);
 }
 
 void	run_sa(t_run *run)

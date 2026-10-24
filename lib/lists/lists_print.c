@@ -6,12 +6,12 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 20:35:59 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/10/24 16:04:54 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 17:17:56 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lists_private.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
 void	print_list(const char *label, t_list *list)
 {

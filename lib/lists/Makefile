@@ -13,7 +13,7 @@
 NAME := liblists.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
-CPPFLAGS := -I.
+CPPFLAGS := -I. -I../ft_printf
 BUILD_DIR := build
 
 SRC := lists.c \
