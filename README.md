@@ -217,6 +217,20 @@ The README is documentation of this repository; implementation decisions and
 code changes remain the responsibility of the project author.
 Any AI used was checked, double checked, triple checked by human.
 
+### References
+
+- man
+- man again
+- C language references such as the C99 standard documentation and online C library references.
+- and man again
+- 42 intra documentation for project rules, the Norm, and AI guidelines.
+- Lot of man google
+- Lot of rubber duck talking
+- Lot of fellow students <3
+- Lot of coffee
+
+*La route est longue, mais la voie est libre*
+
 ## Author
 
 * `vrouxel` - implementation, algorithm selection, testing, and documentation.
