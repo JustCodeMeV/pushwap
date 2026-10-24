@@ -221,4 +221,4 @@ Any AI used was checked, double checked, triple checked by human.
 
 * `vrouxel` - implementation, algorithm selection, testing, and documentation.
   `paukowal`- algorithms implementation and selection.
-  `vrouxel` - implementation, testing, reviewing.
+  `dtarasov` - implementation, testing, reviewing.
