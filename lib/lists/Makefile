@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ../liblists.a
+NAME := liblists.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 CPPFLAGS := -I.

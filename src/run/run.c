@@ -6,7 +6,7 @@
 /*   By: vrouxel <vrouxel@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 00:00:00 by vrouxel           #+#    #+#             */
-/*   Updated: 2026/10/24 14:22:00 by vrouxel          ###   ########.fr       */
+/*   Updated: 2026/10/24 14:31:04 by vrouxel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	run_report_operations(const t_run *run)
 		"sa", "sb", "ss", "pa", "pb", "ra",
 		"rb", "rr", "rra", "rrb", "rrr"
 	};
-	int					i;
+	int			i;
 
 	ft_putstr_fd("\n[bench] ", 2);
 	i = 0;
